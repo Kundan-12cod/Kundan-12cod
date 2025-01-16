@@ -1,0 +1,95 @@
+1. What does R-squared represent in a regression model?
+R-squared is a statistical measure that represents the proportion of the variance in the dependent variable that is explained by the independent variable(s) in the regression model. It ranges from 0 to 1. A higher R-squared value indicates a better fit of the model, meaning the independent variables explain a larger portion of the variability in the dependent variable.  
+2. What are the assumptions of linear regression?
+Linear regression relies on several key assumptions:
+Linearity: The relationship between the independent and dependent variables is linear.  
+
+
+Independence: The observations are independent of each other.
+Homoscedasticity: The variance of the residuals (errors) is constant across all values of the independent variables.  
+
+
+Normality: The residuals are normally distributed.
+3. What is the difference between R-squared and Adjusted R-squared?
+R-squared: Measures the proportion of variance explained by the model. It can increase simply by adding more predictors, even if they don't significantly improve the fit.
+Adjusted R-squared: Penalizes the model for adding more predictors that don't significantly improve the fit. It provides a more accurate measure of how well the model explains the variance when considering the number of predictors.
+4. Why do we use Mean Squared Error (MSE)?
+MSE is a common metric used to evaluate the performance of regression models. It calculates the average squared difference between the predicted values and the actual values. MSE is sensitive to outliers because squaring the errors amplifies the effect of large errors.
+5. What does an Adjusted R-squared value of 0.85 indicate?
+An Adjusted R-squared value of 0.85 indicates that 85% of the variance in the dependent variable is explained by the model, after adjusting for the number of predictors. This suggests a good fit of the model.
+6. How do we check for normality of residuals in linear regression?
+We can check for normality of residuals using:
+Q-Q plot: A visual tool to compare the distribution of the residuals to a normal distribution.
+Histogram: To visualize the distribution of residuals.
+Statistical tests: Such as the Shapiro-Wilk test or the Kolmogorov-Smirnov test.
+7. What is multicollinearity, and how does it impact regression?
+Multicollinearity occurs when two or more independent variables in a regression model are highly correlated with each other. It can:  
+Inflate the standard errors of the coefficients: Making it difficult to determine the true effect of each predictor.
+Make the coefficients unstable: Small changes in the data can lead to large changes in the estimated coefficients.
+Decrease the model's predictive accuracy.
+8. What is Mean Absolute Error (MAE)?
+MAE is another metric used to evaluate regression models. It calculates the average absolute difference between the predicted values and the actual values. MAE is less sensitive to outliers than MSE.
+9. What are the benefits of using an ML pipeline?
+ML pipelines offer several benefits:
+Automation: Streamline the entire model building process, from data preprocessing to model evaluation.
+Reproducibility: Ensure that the same steps are applied consistently, making the process more reproducible.
+Efficiency: Reduce the time and effort required for model development and testing.
+10. Why is RMSE considered more interpretable than MSE?
+RMSE is the square root of MSE. It is considered more interpretable than MSE because it is in the same units as the dependent variable. This makes it easier to understand the magnitude of the errors.
+11. What is pickling in Python, and how is it useful in ML?
+Pickling is the process of serializing Python objects into a byte stream, which can then be saved to a file or transmitted over a network. In ML, pickling is used to:
+Save trained models: For later use or deployment without retraining.
+Share models with others: For collaboration or deployment on different systems.
+Store intermediate results: To avoid recomputing them in future runs.
+12. What does a high R-squared value mean?
+A high R-squared value indicates that the model explains a large proportion of the variance in the dependent variable. However, it's important to note that a high R-squared doesn't necessarily mean the model is a good fit. It's crucial to consider other factors like the number of predictors, the presence of multicollinearity, and the model's performance on unseen data.  
+13. What happens if linear regression assumptions are violated?
+If the assumptions of linear regression are violated, the model's estimates may be biased, inefficient, and unreliable. The consequences can include:
+Inaccurate predictions: The model may not accurately predict future values.
+Incorrect inferences: The statistical tests may not be valid, leading to incorrect conclusions.
+14. How can we address multicollinearity in regression?
+Several techniques can be used to address multicollinearity:
+Remove one or more of the correlated predictors.
+Use techniques like Principal Component Analysis (PCA) to create new uncorrelated variables.
+Use regularization methods like Ridge or Lasso regression.
+15. How can feature selection improve model performance in regression analysis?
+Feature selection can improve model performance by:
+Reducing overfitting: By removing irrelevant or redundant predictors.
+Improving interpretability: By making the model simpler and easier to understand.
+Reducing computational cost: By reducing the number of predictors.
+16. How is Adjusted R-squared calculated?
+The formula for Adjusted R-squared is:
+Adjusted R-squared = 1 - [(1 - R-squared) * (n - 1) / (n - p - 1)]
+
+where:
+R-squared is the coefficient of determination
+n is the sample size
+p is the number of predictors
+17. Why is MSE sensitive to outliers?
+MSE is sensitive to outliers because it squares the errors. This means that large errors have a disproportionately large impact on the overall MSE value.
+18. What is the role of homoscedasticity in linear regression?
+Homoscedasticity is the assumption that the variance of the residuals is constant across all values of the independent variables. It is important because it ensures that the estimates of the regression coefficients are efficient and unbiased.
+19. What is Root Mean Squared Error (RMSE)?
+RMSE is the square root of MSE. It is in the same units as the dependent variable, making it easier to interpret than MSE. It measures the average magnitude of the errors.
+
+20. Why is pickling considered risky?
+Security Risks:
+Pickled files can contain arbitrary Python code.
+Loading a pickled file from an untrusted source can execute malicious code on your system.
+Compatibility Issues:
+Pickled files can be version-dependent.
+A file pickled with one Python version might not be loadable in a different version.
+Data Format Changes:
+If the structure of the pickled object changes, it might not be loadable correctly.
+21. What alternatives exist to pickling for saving ML models?
+Joblib: A library specifically designed for saving and loading Python objects, including ML models. It offers better performance and compatibility than pickle.
+Cloud Storage Services: Services like AWS S3, Google Cloud Storage, or Azure Blob Storage can be used to store and retrieve ML models.
+Model Serialization Frameworks: Some ML libraries, like TensorFlow and PyTorch, provide their own serialization formats for saving and loading models.
+22. What is heteroscedasticity, and why is it a problem?
+Heteroscedasticity: This is the violation of the assumption that the variance of the residuals is constant across all values of the independent variables. In simpler terms, the spread of the errors is not uniform.
+Problems:
+Inaccurate Standard Errors: It leads to inaccurate standard errors of the regression coefficients, which can affect hypothesis testing and confidence intervals.
+Inefficient Estimates: The estimates of the regression coefficients may become inefficient, meaning they are not as precise as they could be.
+Invalid Statistical Tests: Some statistical tests assume homoscedasticity, and violating this assumption can lead to invalid results.
+23. How can interaction terms enhance a regression model's predictive power?
+Interaction terms allow you to model how the effect of one independent variable on the dependent variable changes depending on the value of another independent variable.
